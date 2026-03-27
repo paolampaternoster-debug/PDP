@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #fff5f9;
-  --foreground: #2d1b2e;
+  --foreground: #3d1a2e;
 }
 
 @theme inline {
@@ -15,47 +16,59 @@
   --color-pink-300: #ff94ba;
   --color-pink-400: #ff5c92;
   --color-pink-500: #ff2d6e;
-  --color-pink-600: #f00d55;
-  --color-pink-700: #cc0043;
-  --color-pink-800: #a8003a;
-  --color-pink-900: #8c0033;
+  --color-pink-600: #e8005a;
+  --color-pink-700: #c4004d;
+  --color-pink-800: #a00040;
+  --color-pink-900: #7a0033;
 
   --color-coral: #ff6b6b;
   --color-tangerine: #ff9a3c;
   --color-sun: #ffd93d;
+  --color-mint: #6bcb77;
   --color-turq: #4ecdc4;
   --color-ocean: #45b7d1;
   --color-lavender: #c77dff;
+  --color-cream: #fff8e7;
+}
 
-  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Pacifico", cursive;
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: "Pacifico", cursive;
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-8px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
 }
-
-.float-animation {
-  animation: float 3s ease-in-out infinite;
-}
+.float { animation: float 4s ease-in-out infinite; }
+.float-delay-1 { animation: float 4s ease-in-out 0.5s infinite; }
+.float-delay-2 { animation: float 4s ease-in-out 1s infinite; }
+.float-delay-3 { animation: float 4s ease-in-out 1.5s infinite; }
 
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
-
-.shimmer {
-  background: linear-gradient(90deg, #ff94ba 25%, #ffd93d 50%, #ff94ba 75%);
+.shimmer-text {
+  background: linear-gradient(90deg, #ff5c92 0%, #ffd93d 30%, #ff9a3c 60%, #ff5c92 100%);
   background-size: 200% auto;
   animation: shimmer 3s linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+@keyframes pulse-soft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+}
+.pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
